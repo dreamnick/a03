@@ -1,0 +1,136 @@
+<%include header%>
+    <div class="Bio">
+      <img src="/images/DomPic.jpg" class="img-circle" alt="Me" width="90%" height="60%">
+      <p><strong><br>Player: </strong>Dominic Gilliam<br><strong>IDM: </strong>Computer Science<br><strong>Level: </strong>Senior<br><br></p>
+      <p>Coding:</p>
+      <div id="myProgress">
+        <div id="myBar"></div>
+      </div>
+      <script>
+        function move() {
+          var elem = document.getElementById("myBar");   
+          var width = 1;
+          var id = setInterval(frame, 10);
+          function frame() {
+            if (width >= 100) {
+              clearInterval(id);
+            } else {
+              width++; 
+              elem.style.width = width + '%'; 
+            }
+          }
+        }
+      </script>
+      <p>Design: </p>
+      <div id="myProgress">
+        <div id="myBar2"></div>
+      </div>
+      <script>
+        function move() {
+          var elem = document.getElementById("myBar2");   
+          var width = 1;
+          var id = setInterval(frame, 6000);
+          function frame() {
+            if (width >= 100) {
+              clearInterval(id);
+            } else {
+              width++; 
+              elem.style.width = width + '%'; 
+            }
+          }
+        }
+      </script>
+      <p>Media: </p>
+      <div id="myProgress">
+        <div id="myBar3"></div>
+      </div>
+      <script>
+        function move() {
+          var elem = document.getElementById("myBar3");   
+          var width = 1;
+          var id = setInterval(frame, 10);
+          function frame() {
+            if (width >= 100) {
+              clearInterval(id);
+            } else {
+              width++; 
+              elem.style.width = width + '%'; 
+            }
+          }
+        }
+      </script>
+      
+      <a href="DomResume.html"><button type="button" class="btn-primary1" ><strong>View Full Resume</strong></button></a>
+    </div>
+
+    <div class="major">
+      <br>
+      <h2>IDM: Computer Science</h2>
+      <h4>Interactive Digital Media: Computer Science is a major suited for students interested in design,<br> primarily through a means of coding.  Classes specific to this emphasis focus on written communication<br> for software development, web design and app design. Similar to the other two emphases, the major<br> completes IDM core classes, giving students a well-rounded competence in art, design and coding. </h4>
+
+      <h2>Dom's Portfolio Highlights</h2>
+
+      <button class="accordion">Bio</button>
+      <div class="panel">
+        <p><br> What's up everybody! I'm a IDM: computer science major hailing from St.Louis Missouri. I plan on either working as a software engineer or as a web Developer. With software engineer I want work on creating new AI (artifical intelligence). With web development I would like to start my on business on obtaining clients and making new robust sites. </p>
+      </div>
+
+      <button class="accordion">Experience</button>
+      <div class="panel">
+        <p><br><strong>Jobs:</strong><br>
+          Youth Counselor | Clarinda Academy | 2017 - present <br>
+          Line Cook | A and G Restaurant | 2017<br><br>
+          <strong>Orgs:</strong> <br>
+          ACM | ACM member | 2013 - 2017 <br>
+          Cyber Security Club | Member | 2014 - 2015</p>
+      </div>
+      
+      <button class="accordion">Gallery</button>
+      <div class="panel">
+        <div class="gallery">
+          <h1>View Gallery</h1>
+          <div class="row">
+            <div class="column">
+              <iframe width="400" height="225" src="https://www.youtube.com/watch?v=wxQR5kokq68" 
+	style="float: center;" frameborder="0" gesture="media" allowfullscreen></iframe>
+            </div>
+           
+          </div>
+
+          <div class="container">
+            <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+            <img id="expandedImg" style="width:100%">
+            <div id="imgtext"></div>
+          </div>
+
+          <script>
+            function myFunction(imgs) {
+              var expandImg = document.getElementById("expandedImg");
+              var imgText = document.getElementById("imgtext");
+              expandImg.src = imgs.src;
+              imgText.innerHTML = imgs.alt;
+              expandImg.parentElement.style.display = "block";
+            }
+          </script>
+
+        </div>
+      </div>
+      <div>
+      <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+          acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight){
+              panel.style.maxHeight = null;
+            } else {
+              panel.style.maxHeight = panel.scrollHeight + "px";
+            } 
+          });
+        }
+      </script>
+    </div>
+  <%include footer%>

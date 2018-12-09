@@ -1,0 +1,17 @@
+<%include header%>
+<body>
+	<main>
+<h2>Contact Me</h2>
+<p>Required fields are marked with an asterisk (*).</p>
+<form method="post" action="http://webdevbasics.net/scripts/fishcreek.php">
+<label for="myName">*Name:</label>
+<input type="text" id="myName" name="myName" required="required">
+<label for="myEmail">*E-mail:</label>
+<input type="email" id="myEmail" name="myEmail" required="required">
+<label for="myComments">*Comments:</label>
+<textarea id="myComments" name="myComments" rows="2" cols="20" required="required"></textarea>
+<input type="submit" value="Send Now" id="mySubmit">
+</form>
+</main>
+  </body>
+  <%include footer%>

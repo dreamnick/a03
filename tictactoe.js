@@ -14,26 +14,26 @@ const game = (function () {
     document.getElementById('lower-mid'),
     document.getElementById('lower-right')
   ];
-  </script>
 
-  for (let i = 0; i < cellElements.length; i++) {
-    cellElements[i].addEventListener('click', async function () {
 
-      // add player's X
-      const isValidMove = await addX(cellElements[i]);
+  // for (let i = 0; i < cellElements.length; i++) {
+  //   cellElements[i].addEventListener('click', async function () {
 
-      if (isValidMove) {
+  //     // add player's X
+  //     const isValidMove = await addX(cellElements[i]);
 
-        // choose computer's O
-        const j = await findBestMove(cellElements);
+  //     if (isValidMove) {
 
-        // pause, then add computer's O
-        await new Promise((resolve) => setTimeout(() => resolve(), 2000));
-        await addO(cellElements[j]);
-      }
+  //       // choose computer's O
+  //       const j = await findBestMove(cellElements);
 
-    });
-  }
+  //       // pause, then add computer's O
+  //       await new Promise((resolve) => setTimeout(() => resolve(), 2000));
+  //       await addO(cellElements[j]);
+  //     }
+
+  //   });
+  // }
 
   async function findBestMove(arr) {
     for (let n = 0; n < arr.length; n++) {
@@ -43,7 +43,7 @@ const game = (function () {
     }
   }
 
-  async function addX(cellElement) {
+  const addX = function (cellElement) {
     if (cellElement.childElementCount === 1) { return false; }
     const headingElement = document.createElement("h1");
     const textNode = document.createTextNode("X");
@@ -51,6 +51,7 @@ const game = (function () {
     cellElement.appendChild(headingElement);
     return true;
   }
+ window.addX = addX
 
   async function addO(cellElement) {
     if (cellElement.childElementCount === 1) { return; }
@@ -59,54 +60,55 @@ const game = (function () {
     headingElement.appendChild(textNode);
     cellElement.appendChild(headingElement);
   }
-
-})();
-function getWinner(){
-	var box1 = document.getElementById("box1),
-	var box2 = document.getElementById("box2),
-	var box3 = document.getElementById("box3),
-	var box4 = document.getElementById("box4),
-	var box5 = document.getElementById("box5),
-	var box6 = document.getElementById("box6),
-	var box7 = document.getElementById("box7),
-	var box8 = document.getElementById("box8),
-	var box9 = document.getElementById("box9);
+})(window);
+// function getWinner(){
+// 	var box1 = document.getElementById("box1")
+// 	var box2 = document.getElementById("box2")
+// 	var box3 = document.getElementById("box3")
+// 	var box4 = document.getElementById("box4")
+// 	var box5 = document.getElementById("box5")
+// 	var box6 = document.getElementById("box6")
+// 	var box7 = document.getElementById("box7")
+// 	var box8 = document.getElementById("box8")
+// 	var box9 = document.getElementById("box9")
 	
-//get  all possibilities
-	if(box1.innerHTML !== "" && box1.innerHTML === box2.innerHTML && box1.innerHTML === box3.innerHTML)
-		console.log("win");
+// //get  all possibilities
+// 	if(box1.innerHTML !== "" && box1.innerHTML === box2.innerHTML && box1.innerHTML === box3.innerHTML)
+// 		console.log("win");
 	
-	else if{
-		box4.innerHTML !== "" && box4.innerHTML === box5.innerHTML && box4.innerHTML === box6.innerHTML)
-		console.log("win");
-	}
+// 	else if{
+// 		box4.innerHTML !== "" && box4.innerHTML === box5.innerHTML && box4.innerHTML === box6.innerHTML)
+// 		console.log("win");
+// 	}
 	
-	else if{
-		box7.innerHTML !== "" && box7.innerHTML === box8.innerHTML && box7.innerHTML === box9.innerHTML)
-		console.log("win");
-	}
+// 	else if{
+// 		box7.innerHTML !== "" && box7.innerHTML === box8.innerHTML && box7.innerHTML === box9.innerHTML)
+// 		console.log("win");
+// 	}
 	
-	else if{
-		box1.innerHTML !== "" && box1.innerHTML === box4.innerHTML && box1.innerHTML === box7.innerHTML)
-		console.log("win");
-	}
+// 	else if{
+// 		box1.innerHTML !== "" && box1.innerHTML === box4.innerHTML && box1.innerHTML === box7.innerHTML)
+// 		console.log("win");
+// 	}
 	
-	else if{
-		box4.innerHTML !== "" && box4.innerHTML === box5.innerHTML && box4.innerHTML === box6.innerHTML)
-		console.log("win");
-	}
+// 	else if{
+// 		box4.innerHTML !== "" && box4.innerHTML === box5.innerHTML && box4.innerHTML === box6.innerHTML)
+// 		console.log("win");
+// 	}
 	
-	else if{
-		box2.innerHTML !== "" && box2.innerHTML === box5.innerHTML && box2.innerHTML === box8.innerHTML)
-		console.log("win");
-	}
+// 	else if{
+// 		box2.innerHTML !== "" && box2.innerHTML === box5.innerHTML && box2.innerHTML === box8.innerHTML)
+// 		console.log("win");
+// 	}
 	
-	else if{
-		box3.innerHTML !== "" && box3.innerHTML === box6.innerHTML && box3.innerHTML === box9.innerHTML)
-		console.log("win");
-	}
+// 	else if{
+// 		box3.innerHTML !== "" && box3.innerHTML === box6.innerHTML && box3.innerHTML === box9.innerHTML)
+// 		console.log("win");
+// 	}
 	
-	else if{
-		box4.innerHTML !== "" && box4.innerHTML === box5.innerHTML && box4.innerHTML === box6.innerHTML)
-		console.log("win");
-	}
+// 	else if{
+// 		box4.innerHTML !== "" && box4.innerHTML === box5.innerHTML && box4.innerHTML === box6.innerHTML)
+// 		console.log("win");
+//   }
+  
+// }

@@ -14,7 +14,6 @@ const game = (function () {
     document.getElementById('lower-mid'),
     document.getElementById('lower-right')
   ];
-  </script>
 
   for (let i = 0; i < cellElements.length; i++) {
     cellElements[i].addEventListener('click', async function () {
